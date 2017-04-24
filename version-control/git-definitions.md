@@ -4,7 +4,7 @@
 **Instructions: ** Define each of the following Git concepts.
 
 * What is version control?  Why is it useful?
-Version control is a system of keeping track of and recording changes made to a set of code, for example, Git. This is useful and important because code is so valuable. If you spend a chunk of time on a piece of code and then something happens to your computer, your code is gone. If you have version control, you can recall the code using a different machine. As well, if you make a mistake in your code, or change the plan of what you're doing, you can use version control to recall a previous version of the code.
+Version control is a system of keeping track of and recording changes made to a set of code, for example, Git. This is useful and important because code is so valuable. If you spend a chunk of time on a piece of code and then something happens to your computer, your code is gone. If you have version control, you can recall the code using a different machine. As well, if you make a mistake in your code or change the plan of what you're doing, you can use version control to recall a previous version of the code.
 * What is a branch and why would you use one?
 A branch is a copy of the code on version control that you specifically are working on. It is a replica of the master at that moment, but will not necesarily reflect the master forever. Branches are helpful because they allow multiple people to work on the code at the same time. As well, they allow the master code to remain untouched, as edits to the master can be detrimental without being reviewed.
 * What is a commit? What makes a good commit message?
