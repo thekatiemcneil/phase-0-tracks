@@ -49,3 +49,15 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+@media screen and (min-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    color: orange;
+  }
+}
