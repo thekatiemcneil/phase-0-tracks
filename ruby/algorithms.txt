@@ -1,0 +1,7 @@
+-For each button on the elevator:
+  -Compare to floor number you want to go to:
+    -If it matches the floor number you want to go to:
+      -Press the button.
+    -If it does not match the floor number you want to go to:
+      -Proceed to next button.
+    -Continue until floor number desired and button number match.
