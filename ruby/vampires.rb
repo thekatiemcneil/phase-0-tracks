@@ -39,3 +39,12 @@ puts "Would you like to enroll in the company's health insurance?"
 
 puts "Thanks! Now detecting vampire status."
 
+if vampire_age && vampire_garlic == "false"
+  puts "Probably not a vampire."
+elsif vampire_age && (vampire_garlic || vampire_health) == "true"
+  puts "Probably a vampire."
+elsif vampire_age && vampire_garlic && vampire_health == "true"
+  puts "Almost certainly a vampire."
+elsif vampire_name == "true"
+  puts "Definitely a vampire."
+else puts "Results inconclusive."
