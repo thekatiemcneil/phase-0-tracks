@@ -22,3 +22,21 @@ garlic_bread_preference = gets.chomp
 #assign user input to 'health_insurance' value.
 puts "Would you like to enroll in the company's health insurance?"
 health_insurance = gets.chomp
+
+
+puts "Thanks!"
+
+#if employee age is right and is willing to eat garlic bread
+#puts "Probably not a vampire"
+
+#if age is wrong and hates garlic bread
+#puts "Probably a vampire."
+
+#if age is wrong, hates garlic bread, and doesn't want insurance
+#puts "Almost certainly a vampire."
+
+#if name is "drake cula" or "tu fang"
+#puts "definitely a vampire."
+
+#otherwise
+#puts "Results inconclusive"
