@@ -39,3 +39,12 @@ puts "Would you like to enroll in the company's health insurance?"
 
 puts "Thanks! Now detecting vampire status."
 
+# if employee age and garlic bread or health insurance are okay, print "Probably not a vampire."
+
+# if employee age is wrong and hates garlic bread or waives insurance, print "Probably a vampire."
+
+# if employee age is wrong, hates garlic bread, and doesn't want insurance, print "Almost certainly a vampire."
+
+# if name matches a vampire name, print "Definitely a vampire."
+
+# otherwise, print "Results inconclusive."
