@@ -43,11 +43,11 @@ puts "Would you like to enroll in our company's health insurance?"
 end
 
 
-puts "Name: #{name}. Age: #{age}. Birth Year: #{birth_year}. Garlic Bread? #{bread_preference}. Insurance? #{insurance_preference}."
+# puts "Name: #{name}. Age: #{age}. Birth Year: #{birth_year}. Garlic Bread? #{bread_preference}. Insurance? #{insurance_preference}."
 
 if
   werewolf_age && (werewolf_insurance || werewolf_bread)
-  puts "This is a werewolf."
+  puts "Probably not a vampire."
 elsif
   vampire_age && (vampire_insurance || vampire_bread)
   puts "This is probably a vampire."
