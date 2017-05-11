@@ -47,15 +47,36 @@ end
 
 if
   werewolf_age && (werewolf_insurance || werewolf_bread)
-  puts "Probably not a vampire."
-elsif
+  vampire_status = "probably_no"
+end
+
+if
   vampire_age && (vampire_insurance || vampire_bread)
-  puts "This is probably a vampire."
-elsif
+  vampire_status = "probably_yes"
+end
+
+if
   vampire_age && vampire_insurance && vampire_bread
-  puts "This is almost certainly a vampire."
-elsif vampire_name
-  puts "This is definitely a vampire."
+  vampire_status = "certainly_yes"
+end
+
+if
+  vampire_name
+  vampire_status = "definitely_yes"
+end
+
+if
+  vampire_status == "probably_no"
+  puts "Probably not a vampire."
+  elsif
+  vampire_status == "probably_yes"
+  puts "Probably a vampire."
+  elsif
+  vampire_status == "certainly_yes"
+  puts "Almost certainly a vampire."
+  elsif
+  vampire_status == "definitely_yes"
+  puts "Definitely a vampire."
 else
   puts "Results inconclusive."
 end
