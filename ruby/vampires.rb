@@ -1,50 +1,61 @@
 puts "What's your name?"
   name = gets.chomp
 
-  if name == "Drake Cula"
+  if
+    name == "Drake Cula"
     vampire_name = true
   elsif name == "Tu Fang"
     vampire_name = true
-  else vampire_name = false
+  else werewolf_name = true
   end
 
 puts "How old are you?"
   age = gets.chomp
 
 puts "What year were you born?"
-  year = gets.chomp
+  birth_year = gets.chomp
 
-estimated_age = 2017 - year.to_i
+  estimated_age = 2017 - birth_year.to_i
 
-  if estimated_age.to_i != age.to_i
+  if
+    estimated_age.to_i == age.to_i
+    werewolf_age = true
+  elsif estimated_age.to_i != age.to_i
     vampire_age = true
-  else vampire_age = false
+  else werewolf_age = true
   end
 
 puts "Our company cafeteria serves garlic bread. Should we order some for you?"
-  garlic_bread = gets.chomp
+  bread_preference = gets.chomp
 
-  if garlic_bread == "no"
-    vampire_garlic = true
-  else vampire_garlic = false
+  if bread_preference == "no"
+    vampire_bread = true
+  else
+    werewolf_bread = true
   end
 
-puts "Would you like to enroll in the company's health insurance?"
-  insurance = gets.chomp
+puts "Would you like to enroll in our company's health insurance?"
+  insurance_preference = gets.chomp
 
-  if insurance == "no"
-    vampire_health = true
-  else vampire_health = false
-  end
+  if insurance_preference == "no"
+    vampire_insurance = true
+  else werewolf_insurance = true
+end
 
-puts "Thanks! Now detecting vampire status."
 
-# if employee age and garlic bread or health insurance are okay, print "Probably not a vampire."
+puts "Name: #{name}. Age: #{age}. Birth Year: #{birth_year}. Garlic Bread? #{bread_preference}. Insurance? #{insurance_preference}."
 
-# if employee age is wrong and hates garlic bread or waives insurance, print "Probably a vampire."
-
-# if employee age is wrong, hates garlic bread, and doesn't want insurance, print "Almost certainly a vampire."
-
-# if name matches a vampire name, print "Definitely a vampire."
-
-# otherwise, print "Results inconclusive."
+if
+  werewolf_age && (werewolf_insurance || werewolf_bread)
+  puts "This is a werewolf."
+elsif
+  vampire_age && (vampire_insurance || vampire_bread)
+  puts "This is probably a vampire."
+elsif
+  vampire_age && vampire_insurance && vampire_bread
+  puts "This is almost certainly a vampire."
+elsif vampire_name
+  puts "This is definitely a vampire."
+else
+  puts "Results inconclusive."
+end
