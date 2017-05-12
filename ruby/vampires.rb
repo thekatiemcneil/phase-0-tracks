@@ -50,28 +50,49 @@ while
     else werewolf_insurance = true
   end
 
+   puts "Lets find out your allergies."
+   allergy_status = false
+    until allergy_status
+      puts "Please list any allergies you have and hit 'enter.' When you've listed each, type 'done.'"
+      allergies = gets.chomp
+        if
+          allergies == "sunlight"
+            allergy_status = true
+            sunlight_allergy = true
+        elsif
+          allergies == "done"
+            allergy_status = true
+        else
+          allergy_status = false
+        end
+    end
 
   # puts "Name: #{name}. Age: #{age}. Birth Year: #{birth_year}. Garlic Bread? #{bread_preference}. Insurance? #{insurance_preference}."
 
-  if
-    werewolf_age && (werewolf_insurance || werewolf_bread)
-    vampire_status = "probably_no"
-  end
+    if
+      werewolf_age && (werewolf_insurance || werewolf_bread)
+      vampire_status = "probably_no"
+    end
 
-  if
-    vampire_age && (vampire_insurance || vampire_bread)
-    vampire_status = "probably_yes"
-  end
+    if
+      vampire_age && (vampire_insurance || vampire_bread)
+      vampire_status = "probably_yes"
+    end
 
-  if
-    vampire_age && vampire_insurance && vampire_bread
-    vampire_status = "certainly_yes"
-  end
+    if
+      vampire_age && vampire_insurance && vampire_bread
+      vampire_status = "certainly_yes"
+    end
 
-  if
-    vampire_name
-    vampire_status = "definitely_yes"
-  end
+    if
+      vampire_name
+      vampire_status = "definitely_yes"
+    end
+
+    if
+      sunlight_allergy
+      vampire_status = "probably_yes"
+    end
 
   if
     vampire_status == "probably_no"
