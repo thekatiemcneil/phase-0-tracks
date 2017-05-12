@@ -25,6 +25,7 @@
 
 # puts encrypt("abc")
 
+
 def encrypt(string)
   secret_password = ("a".."z").to_a
   result = ""
