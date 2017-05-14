@@ -1,48 +1,55 @@
-# define length of string
-# define encrypt method
-# define decrypt method
-
-# def encrypt(str)
- # encrypt.next
-#  index =+ 1
-# string.length
-
-# take a string as an argument
-# (encrypt) move the string forward one letter
-# ex. abc would become bcd
-# figure out index of each letter (1, 2, 3)
-# move forward one index (2, 3, 4) counter += 1
-# return new string based on move forward (b, c, d)
-# (decrypt) move the string back one letter to original string
-# ex. bcd would become abc
-# figure out index of each letter (2, 3, 4)
-# move backward one index (1, 2, 3) counter -= 1
-# return original string (a, b, c)
-
-# def encrypt(str)
-#  "#{str.next}"
-# end
-
-# puts encrypt("abc")
-
-
-def encrypt(string)
-  secret_password = ("a".."z").to_a
-  result = ""
+# Method for encrypting a string.
+def encrypt (str)
+  encrypted = ""
   index = 0
-  while index < string.length
-    character = string[index]
-
-    if character == " "
-      result += " "
-    else
-      n = secret_password.index(character)
-      n_plus = (n + 1) % secret_password.length
-      result += secret_password[n_plus]
+    until index == str.length
+      if str[index] == "z"
+        encrypted = encrypted + "a"
+      else
+        encrypted = encrypted + str[index].next
     end
+  index += 1
+  end
+  return encrypted
+end
+encrypt("abc")
+encrypt("zed")
+
+# Method for indexing backwards 1.
+def previous (letter)
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  new_index = alphabet.index(letter) - 1
+  return alphabet[new_index]
+end
+
+# Method for decrypting a string
+def decrypt (str)
+  decrypted = ""
+  index = 0
+  until index == str.length
+    decrypted = decrypted + previous(str[index])
     index += 1
   end
-  return result
+  return decrypted
 end
-puts encrypt("zed")
-puts encrypt("xyz")
+
+(encrypt("swordfish"))
+=begin
+The string "swordfish" is first encrypted.
+So it becomes "txpsegjti".
+Then it is decrypted, so it is returned with being changed back to "swordfish".
+=end
+
+puts "Would you Like to encrypt or decrypt your password?"
+action = gets.chomp
+  if action == "encrypt"
+    puts "Enter password"
+    password = gets.chomp
+    puts "Password Encrypted: #{encrypt(password)}"
+  elsif action == "decrypt"
+    puts "Enter password"
+    password = gets.chomp
+    puts "Password Decrypted: #{decrypt(password)}"
+  else
+    puts "Input ERROR"
+  end
