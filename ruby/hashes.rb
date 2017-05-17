@@ -32,6 +32,19 @@ puts "How many rooms do you have?"
 p client_1
 
 # ask user if they'd like to update any key, or 'none' to skip
-# if they type a key, assign new variable to that key
+# evaluate the input to determine if it matches a previously entered key
+# if they type a key, ask for new variable for the key
+# assign the user input to the key
+# if they type 'none', then skip
+puts "Is there any info you need to update?"
+  update = gets.chomp
+  position = client_1.key(update)
+  if
+    client_1.has_key? "#{update}".to_sym
+      puts "What is the new value?"
+        value = gets.chomp
+      client_1[update.to_sym] = "#{value}"
+    end
 
 # print lastest version of hash
+p client_1
