@@ -9,25 +9,49 @@
 # give output of spy name
 
 # vowels = ["a", "e", "i", "o", "u"]
-vowels = (/aeiou/)
-consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "e", "x", "y", "z"]
+# consonants = "bcdfghjklmnpqrstvwxyz"
+# vowels = (/aeiou/)
+consonants_hash = {
+  "b" => "c", "B" => "C",
+  "c" => "d", "C" => "D",
+  "d" => "f", "D" => "F",
+  "f" => "g", "F" => "G",
+  "g" => "h", "G" => "H",
+  "h" => "j", "H" => "J",
+  "j" => "k", "J" => "K",
+  "k" => "l", "K" => "L",
+  "l" => "m", "L" => "M",
+  "m" => "n", "M" => "N",
+  "n" => "p", "N" => "P",
+  "p" => "q", "P" => "Q",
+  "q" => "r", "Q" => "R",
+  "r" => "s", "R" => "S",
+  "s" => "t", "S" => "T",
+  "t" => "v", "T" => "V",
+  "v" => "w", "V" => "W",
+  "w" => "x", "W" => "X",
+  "x" => "y", "X" => "Y",
+  "y" => "z", "Y" => "Z",
+  "z" => "b", "Z" => "B"
+}
 
 vowels_hash = {
-  "a" => "e",
-  "e" => "i",
-  "i" => "o",
-  "o" => "u",
-  "u" => "a"
+  "a" => "e", "A" => "E",
+  "e" => "i", "E" => "I",
+  "i" => "o", "I" => "O",
+  "o" => "u", "O" => "U",
+  "u" => "a", "U" => "A"
 }
 
 # convert name into character array
-name = "Katie McNeil"
+puts "What is your first and last name?"
+name = gets.chomp
 new_name = name.chars
-p name
-p new_name
-
-# test characters to see if they are vowels
-# name.scan(/[AEIOUaeiou]/)
-# p name.gsub(/["a", "e", "i", "o", "u"]/, '*')
-p name.gsub("aeiou".chars, "eioua".chars)
-p name
+vowel_name = ""
+# test characters to see if they are vowels & consonants
+vowel_name = name.gsub(/[AEIOUaeoiu]/, vowels_hash)
+consonant_name = vowel_name.gsub(/[BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz]/, consonants_hash)
+# change order of first and last name
+backwards_name = consonant_name.split(' ').reverse
+spy_name = [backwards_name]*" "
+puts "Your spy name is #{spy_name}."
