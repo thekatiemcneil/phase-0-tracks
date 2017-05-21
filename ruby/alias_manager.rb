@@ -8,9 +8,6 @@
 # change order of first and last name
 # give output of spy name
 
-# vowels = ["a", "e", "i", "o", "u"]
-# consonants = "bcdfghjklmnpqrstvwxyz"
-# vowels = (/aeiou/)
 consonants_hash = {
   "b" => "c", "B" => "C",
   "c" => "d", "C" => "D",
@@ -43,15 +40,26 @@ vowels_hash = {
   "u" => "a", "U" => "A"
 }
 
+names = {}
 # convert name into character array
-puts "What is your first and last name?"
+input_status = false
+puts "Please type a name and hit 'enter.' When you've converted all names, type 'quit.'"
+until input_status
 name = gets.chomp
-new_name = name.chars
-vowel_name = ""
-# test characters to see if they are vowels & consonants
-vowel_name = name.gsub(/[AEIOUaeoiu]/, vowels_hash)
-consonant_name = vowel_name.gsub(/[BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz]/, consonants_hash)
-# change order of first and last name
-backwards_name = consonant_name.split(' ').reverse
-spy_name = [backwards_name]*" "
-puts "Your spy name is #{spy_name}."
+if
+  name == "quit"
+    input_status = true
+  else
+    input_status = false
+  # test characters to see if they are vowels & consonants
+  vowel_name = name.gsub(/[AEIOUaeoiu]/, vowels_hash)
+  consonant_name = vowel_name.gsub(/[BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz]/, consonants_hash)
+  # change order of first and last name
+  backwards_name = consonant_name.split(' ').reverse
+  spy_name = [backwards_name]*" "
+  names[:"#{name}"] = spy_name
+end
+end
+names.each do |name, spyname|
+  puts "#{spyname} is actually #{name}."
+end
