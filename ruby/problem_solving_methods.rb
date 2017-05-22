@@ -1,22 +1,21 @@
 numbers = [123, 47, 901, 26, 53]
 
-def find_array(array, integer)
+def search_array(arr, num)
     #take into consideration the array, numbers
     #take the integer we want to find
     #scan array to see if integer is in the array
-    index = 0
-    while index < array.length
-        array.each do |number|
-            if number == integer
-                p index
+    index = nil
+    arr.length.times do |x|
+        if arr[x] == num
+            index = x
         end
-        index += 1
     end
     #if integer is in array, print what index integer is at
     #if integer is not in array, print nil
+    return index
 end
 
-find_array(numbers, 123)
+p search_array(numbers, 123)
 
 # # create cache for sequence numbers
 # @cache = {}; @cache[1] = 0; @cache[2] = 1
