@@ -119,18 +119,26 @@ p updated_extincting_dates
 # Do not use any special built-in methods.
 # ----
 
-extinct_animals.each do |animal, year|
-  animals = ["Andean Cat" , "Dodo", "Saiga Antelope"]
-  index = 0
-  until index = animals.length
+new_animals = ["Andean Cat", "Dodo", "Saiga Antelope"]
+index = 0
+new_animals.each do |animal|
+  while
+    index > new_animals.length
     if
-      animal == animals.each
-        puts "#{animal} is extinct."
+      animal == extinct_animals[index]
+        puts "extinct. :("
+    else
+      puts "Still alive and kicking!"
     end
-  end
+  index += 1
+  en
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
 # ----
+
+p extinct_animals
+extinct_animals.delete_if {|animal, year| animal == "Passenger Pigeon" }
+p extinct_animals
