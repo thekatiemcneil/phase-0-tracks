@@ -25,6 +25,10 @@ class Puppy
     puts "*extends paw*"
   end
 
+  def initialize
+    puts "Initializing new puppy instance..."
+  end
+
 end
 
 Bailey = Puppy.new
@@ -34,3 +38,5 @@ Bailey.speak(3)
 Bailey.roll_over
 Bailey.dog_years(4)
 Bailey.shake
+
+Misha = Puppy.new
