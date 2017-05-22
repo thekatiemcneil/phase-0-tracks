@@ -55,6 +55,16 @@ other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
 # ----
 
+all_supplies = []
+
+def combine_supplies(arr1, arr2)
+  all_supplies = arr1 + arr2
+  all_supplies.uniq!
+  p all_supplies
+end
+
+combine_supplies(zombie_apocalypse_supplies, other_survivor_supplies)
+
 # Hash Drills
 
 extinct_animals = {
@@ -71,15 +81,35 @@ extinct_animals = {
 # with a dash in between the key and value, and an asterisk between each pair.
 # ----
 
+extinct_animals.each {|animal, year| puts "#{animal}-#{year}* " }
+
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
 # ----
+
+before_2000_animals = {}
+
+extinct_animals.each { |animal, year|
+    if year < 2000
+      before_2000_animals[animal] = year
+    end
+}
+
+p before_2000_animals
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
 # ----
+
+updated_extincting_dates = {}
+
+extinct_animals.each {|animal, year|
+  updated_extincting_dates[animal] = (year - 3)
+}
+
+p updated_extincting_dates
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:
@@ -88,6 +118,16 @@ extinct_animals = {
 # "Saiga Antelope"
 # Do not use any special built-in methods.
 # ----
+
+extinct_animals.each do |animal, year|
+  animals = ["Andean Cat" , "Dodo", "Saiga Antelope"]
+  index = 0
+  until index = animals.length
+    if
+      animal == animals.each
+        puts "#{animal} is extinct."
+    end
+  end
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
