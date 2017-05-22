@@ -5,9 +5,9 @@ def search_array(arr, num)
     #take the integer we want to find
     #scan array to see if integer is in the array
     index = nil
-    arr.length.times do |x|
-        if arr[x] == num
-            index = x
+    arr.length.times do |number|
+        if arr[number] == num
+            index = number
         end
     end
     #if integer is in array, print what index integer is at
@@ -15,7 +15,7 @@ def search_array(arr, num)
     return index
 end
 
-p search_array(numbers, 123)
+p search_array(numbers, 26)
 
 # # create cache for sequence numbers
 # @cache = {}; @cache[1] = 0; @cache[2] = 1
