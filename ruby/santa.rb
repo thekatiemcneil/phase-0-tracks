@@ -1,29 +1,19 @@
 class Santa
 
   def speak
-    puts "Ho, ho, ho! Haaaapy holidays!"
+    puts "Ho, ho, ho! Haaaaaapy holidays!"
   end
 
-  def eat_milk_and_cookies(cookie_type)
-    puts "That was a good #{cookie_type} cookie!!"
+  def eat_milk_and_cookies(cookie)
+    puts "That was a good #{cookie} cookie!"
   end
 
-  def initialize(gender, ethnicity)
-    @gender = gender
-    @ethnicity = ethnicity
-    puts "Initializing Santa instance..."
-  end
-
-  def ranking
-    @ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-  end
-
-  def age
-    @age = 0
+  def initialize
+    puts "Initializing Santa instance...."
   end
 
 end
 
-Mr_Clause = Santa.new
-Mr_Clause.speak
-Mr_Clause.eat_milk_and_cookies("chocolate chip")
+saint_nick = Santa.new
+saint_nick.speak
+saint_nick.eat_milk_and_cookies("chocolate chip")
