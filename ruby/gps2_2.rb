@@ -9,9 +9,10 @@ def make_a_list(string)
   list_array.each do |item|
     grocery_list[item] = 1
   end
+  grocery_list
 end
 
-make_a_list("stuff, things, items")
+p make_a_list("stuff, things, items")
 
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
