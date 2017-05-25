@@ -33,8 +33,14 @@ p grocery_list
 
 # Method to remove an item from the list
 # input:
+def remove_item(grcy_list, string)
+ grcy_list.delete(string)
+end
 # steps:
 # output:
+
+remove_item(grocery_list, "bananas")
+p grocery_list
 
 # Method to update the quantity of an item
 # input:
