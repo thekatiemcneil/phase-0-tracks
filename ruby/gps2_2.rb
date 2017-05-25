@@ -1,6 +1,3 @@
-
-
-
 # Method to create a list
 def make_a_list(string)
   grocery_list = {}
@@ -12,7 +9,8 @@ def make_a_list(string)
   grocery_list
 end
 
-p make_a_list("stuff, things, items")
+grocery_list = make_a_list("stuff, things, items")
+p grocery_list
 
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
@@ -22,6 +20,13 @@ p make_a_list("stuff, things, items")
 # output: [what data type goes here, array or hash?]
 
 # Method to add an item to a list
+def add_item(grcy_list, string)
+  grcy_list[string] = 1
+end
+
+add_item(grocery_list, "bananas")
+p grocery_list
+
 # input: list, item name, and optional quantity
 # steps:
 # output:
