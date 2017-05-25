@@ -9,7 +9,7 @@ def make_a_list(string)
   grocery_list
 end
 
-grocery_list = make_a_list("stuff, things, items")
+grocery_list = make_a_list("stuff things items")
 p grocery_list
 
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
@@ -46,6 +46,13 @@ p grocery_list
 # input:
 # steps:
 # output:
+def update_quantity(grcy_list, string, i)
+  # hash(key[value])
+  grcy_list[string] = i
+end
+
+update_quantity(grocery_list, "stuff", 3)
+p grocery_list
 
 # Method to print a list and make it look pretty
 # input:
