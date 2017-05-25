@@ -20,11 +20,11 @@ p grocery_list
 # output: [what data type goes here, array or hash?]
 
 # Method to add an item to a list
-def add_item(grcy_list, string, i)
+def add_item(grcy_list, string, i=1)
   grcy_list[string] = i
 end
 
-add_item(grocery_list, "bananas", 3)
+add_item(grocery_list, "bananas", 5)
 p grocery_list
 
 # input: list, item name, and optional quantity
