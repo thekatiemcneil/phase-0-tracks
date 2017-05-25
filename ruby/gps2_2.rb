@@ -9,8 +9,6 @@ def make_a_list(string)
   grocery_list
 end
 
-grocery_list = make_a_list("stuff things items")
-p grocery_list
 
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
@@ -24,8 +22,6 @@ def add_item(grcy_list, string, i=1)
   grcy_list[string] = i
 end
 
-add_item(grocery_list, "bananas", 5)
-p grocery_list
 
 # input: list, item name, and optional quantity
 # steps:
@@ -39,8 +35,6 @@ end
 # steps:
 # output:
 
-remove_item(grocery_list, "bananas")
-p grocery_list
 
 # Method to update the quantity of an item
 # input:
@@ -51,10 +45,23 @@ def update_quantity(grcy_list, string, i)
   grcy_list[string] = i
 end
 
-update_quantity(grocery_list, "stuff", 3)
-p grocery_list
 
 # Method to print a list and make it look pretty
 # input:
 # steps:
 # output:
+def print_list(grcy_list)
+  grcy_list.each do |key, value|
+    puts "You need #{value} #{key}."
+  end
+end
+
+grocery_list = make_a_list("stuff things items")
+p grocery_list
+add_item(grocery_list, "bananas", 5)
+p grocery_list
+remove_item(grocery_list, "bananas")
+p grocery_list
+update_quantity(grocery_list, "stuff", 3)
+p grocery_list
+print_list(grocery_list)
