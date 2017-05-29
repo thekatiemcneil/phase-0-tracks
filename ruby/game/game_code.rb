@@ -1,6 +1,6 @@
 class WordGame
 attr_accessor :word, :user_guess
-attr_reader :guessed_words, :guesses_remaining, :is_over, :guess_array, :correct_guess
+attr_reader :guessed_words, :guesses_remaining, :is_over, :letters_guessed, :correct_guess
 
   def initialize
     @is_over = false
@@ -13,7 +13,7 @@ attr_reader :guessed_words, :guesses_remaining, :is_over, :guess_array, :correct
     @word = word.split("")
     @guesses_remaining = @word.count
     p @guesses_remaining
-    @guess_array = "-" * @word.count
+    @letters_guessed = "-" * @word.count
   end
 
   def user_input(user_guess)
@@ -47,10 +47,11 @@ attr_reader :guessed_words, :guesses_remaining, :is_over, :guess_array, :correct
   def rewrite_array
     @word.each_with_index do |i, index|
       if i == @user_guess[index]
-        @guess_array[index] = i
+        @letters_guessed[index] = i
       end
     end
-    @guess_array
+    puts "Current guessed letters: #{@letters_guessed}"
+    @letters_guessed
   end
 
 end
@@ -70,5 +71,9 @@ puts "Player 1! Please enter your secret word."
   player_1 = gets.chomp
   game.word_to_guess(player_1)
 
-puts "Player 2! Its your turn to guess the #{@guesses_remaining} letter word."
-
+puts "Player 2! Time to guess the word. Hint: its #{player_1.length} letters."
+  player_2 = gets.chomp
+  game.user_input(player_2)
+  game.test_guess
+  game.test_guess_count
+  game.rewrite_array
