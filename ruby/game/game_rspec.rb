@@ -24,7 +24,7 @@ describe :word => "word", :guesses_remaining => 1, :user_guess => "word"
   end
 
 # REWRITE_ARRAY
-  it "re-writes the guess array with correctly guessed letters" do
+  it "re-writes the guess array with correctly guessed letters" dore
     expect(wordgame.test_guess).to eq true
   end
 
