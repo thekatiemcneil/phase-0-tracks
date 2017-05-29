@@ -4,6 +4,7 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :g
   def initialize
     @is_over = false
     @guessed_words = []
+    @guesses_remaining = 0
   end
 
   def word_to_guess(word)
@@ -14,10 +15,10 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :g
 
   def user_input(user_guess)
     @guessed_words.push(user_guess)
-    @user_guess = user_guess.split("")
     if @guessed_words.include?(user_guess)
       @guesses_remaining += 1
     end
+    @user_guess = user_guess.split("")
   end
 
   def test_guess
@@ -27,7 +28,6 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :g
     else
       is_over = false
     end
-    @is_over
   end
 
   def test_guess_count
@@ -38,7 +38,6 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :g
     else
       is_over = false
     end
-    @guesses_remaining
   end
 
   def rewrite_array
@@ -47,6 +46,7 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :g
         @guess_array[index] = i
       end
     end
+    @guess_array
   end
 
 end
