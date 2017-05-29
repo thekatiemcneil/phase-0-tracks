@@ -8,12 +8,12 @@ describe :word => "word", :guesses_remaining => 3, :user_guess => "word"
     expect(wordgame.word_to_guess("yes")).to eq "---"
   end
 
-# USER_INPUT
+# USER_GUESS
   it "takes in the user guess and converts it to a character array." do
-    expect(wordgame.user_input("mop")).to eq ["m", "o", "p"]
+    expect(wordgame.user_guess("mop")).to eq ["m", "o", "p"]
   end
 
-# # TEST_GUESS
+# TEST_GUESS
   it "determines if word has been guessed" do
     expect(wordgame.test_guess).to eq true
   end
