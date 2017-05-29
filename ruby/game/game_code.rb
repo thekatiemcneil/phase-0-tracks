@@ -12,15 +12,15 @@ attr_reader :guessed_words, :guesses_remaining, :is_over, :letters_guessed, :cor
   def word_to_guess(word)
     @word = word.split("")
     @guesses_remaining = @word.count
-    p @guesses_remaining
     @letters_guessed = "-" * @word.count
   end
 
   def user_input(user_guess)
-    @guessed_words.push(user_guess)
-    if @guessed_words.include?(user_guess)
-      @guesses_remaining += 1
+    if
+      @guessed_words.include?(user_guess)
+        @guesses_remaining += 1
     end
+    @guessed_words.push(user_guess)
     @user_guess = user_guess.split("")
   end
 
@@ -31,14 +31,16 @@ attr_reader :guessed_words, :guesses_remaining, :is_over, :letters_guessed, :cor
       @correct_guess = true
     else
       is_over = false
+      puts "You didn't get it. Better keep trying."
     end
   end
 
   def test_guess_count
   @guesses_remaining -= 1
     if
-      @guesses_remaining == 0
+      @guesses_remaining <= 0
       is_over = true
+      correct_guess = false
     else
       is_over = false
     end
@@ -71,9 +73,15 @@ puts "Player 1! Please enter your secret word."
   player_1 = gets.chomp
   game.word_to_guess(player_1)
 
-puts "Player 2! Time to guess the word. Hint: its #{player_1.length} letters."
+puts "Okay, Player 2, its your turn! Please enter your first guess. Hint: this word is #{player_1.length} letters long, and you get #{player_1.length} guesses."
   player_2 = gets.chomp
   game.user_input(player_2)
   game.test_guess
   game.test_guess_count
   game.rewrite_array
+  puts "You have #{@guesses_remaining} guesses left."
+
+
+
+# puts "YOU GOT IT! You are incredible."
+# puts "You ran out of guesses. Too bad you couldn't figure it out. :("
