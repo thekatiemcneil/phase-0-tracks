@@ -53,11 +53,4 @@ end
 
 
 
-game1 = WordGame.new
-game1.word_to_guess("word")
-game1.user_input("card")
-p game1.test_guess
-p game1.test_guess_count
-
-
 
