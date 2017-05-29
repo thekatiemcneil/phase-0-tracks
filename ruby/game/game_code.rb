@@ -1,8 +1,9 @@
 class WordGame
-attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array
+attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :guessed_words
 
   def initialize
     @is_over = false
+    @guessed_words = []
   end
 
   def word_to_guess(word)
@@ -12,7 +13,11 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array
   end
 
   def user_input(user_guess)
+    @guessed_words.push(user_guess)
     @user_guess = user_guess.split("")
+    if @guessed_words.include?(user_guess)
+      @guesses_remaining += 1
+    end
   end
 
   def test_guess
@@ -22,6 +27,7 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array
     else
       is_over = false
     end
+    @is_over
   end
 
   def test_guess_count
@@ -32,6 +38,7 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array
     else
       is_over = false
     end
+    @guesses_remaining
   end
 
   def rewrite_array
@@ -50,7 +57,7 @@ game1 = WordGame.new
 game1.word_to_guess("word")
 game1.user_input("card")
 p game1.test_guess
-game1.test_guess_count
+p game1.test_guess_count
 
 
 
