@@ -15,7 +15,7 @@ attr_reader :guessed_words, :guesses_remaining, :is_over, :letters_guessed, :cor
     @letters_guessed = "-" * @word.count
   end
 
-  def user_input(user_guess)
+  def user_guess(user_guess)
     if
       @guessed_words.include?(user_guess)
         @guesses_remaining += 1
@@ -31,7 +31,6 @@ attr_reader :guessed_words, :guesses_remaining, :is_over, :letters_guessed, :cor
       @correct_guess = true
     else
       is_over = false
-      puts "You didn't get it. Better keep trying."
     end
   end
 
@@ -52,7 +51,6 @@ attr_reader :guessed_words, :guesses_remaining, :is_over, :letters_guessed, :cor
         @letters_guessed[index] = i
       end
     end
-    puts "Current guessed letters: #{@letters_guessed}"
     @letters_guessed
   end
 
@@ -75,13 +73,24 @@ puts "Player 1! Please enter your secret word."
 
 puts "Okay, Player 2, its your turn! Please enter your first guess. Hint: this word is #{player_1.length} letters long, and you get #{player_1.length} guesses."
   player_2 = gets.chomp
-  game.user_input(player_2)
+  game.user_guess(player_2)
   game.test_guess
   game.test_guess_count
   game.rewrite_array
-  puts "You have #{@guesses_remaining} guesses left."
 
+until game.is_over == true
+  puts "Well, you didn't get it right. Bummer. Try another guess. You have #{game.guesses_remaining} guesses left. Currently guessed letters: #{game.letters_guessed}"
+    player_2 = gets.chomp
+  game.user_guess(player_2)
+  game.test_guess
+  game.test_guess_count
+  game.rewrite_array
+end
 
-
-# puts "YOU GOT IT! You are incredible."
-# puts "You ran out of guesses. Too bad you couldn't figure it out. :("
+if
+  game.guesses_remaining == 0
+  puts "You ran out of guesses. Too bad you couldn't figure it out. :("
+else
+  game.is_over == true
+  puts "YOU GOT IT! You are incredible."
+end
