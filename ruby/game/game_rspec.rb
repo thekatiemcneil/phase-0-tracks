@@ -20,12 +20,12 @@ describe :word => "word", :guesses_remaining => 1, :user_guess => "word"
 
   # TEST_GUESS_COUNT
   it "checks if guess count has been met" do
-    expect(wordgame.test_guess_count).to eq false
+    expect(wordgame.test_guess_count).to eq true
   end
 
 # REWRITE_ARRAY
   it "re-writes the guess array with correctly guessed letters" do
-    expect(wordgame.test_guess).to eq ["w", "o", "r", "d"]
+    expect(wordgame.test_guess).to eq true
   end
 
 end
