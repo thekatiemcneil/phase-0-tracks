@@ -29,6 +29,8 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array
     if
       @guesses_remaining == 0
       is_over = true
+    else
+      is_over = false
     end
   end
 
