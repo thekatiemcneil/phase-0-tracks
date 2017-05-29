@@ -68,20 +68,20 @@ puts "Its time for the word guessing game!!"
 game = WordGame.new
 
 puts "Player 1! Please enter your secret word."
-  player_1 = gets.chomp
-  game.word_to_guess(player_1)
+  secret_word = gets.chomp
+  game.word_to_guess(secret_word)
 
-puts "Okay, Player 2, its your turn! Please enter your first guess. Hint: this word is #{player_1.length} letters long, and you get #{player_1.length} guesses."
-  player_2 = gets.chomp
-  game.user_guess(player_2)
+puts "Okay, Player 2, its your turn! Please enter your first guess. Hint: this word is #{secret_word.length} letters long, and you get #{secret_word.length} guesses."
+  guess_one = gets.chomp
+  game.user_guess(guess_one)
   game.test_guess
   game.test_guess_count
   game.rewrite_array
 
-until game.is_over == true
-  puts "Well, you didn't get it right. Bummer. Try another guess. You have #{game.guesses_remaining} guesses left. Currently guessed letters: #{game.letters_guessed}"
-    player_2 = gets.chomp
-  game.user_guess(player_2)
+until game.guesses_remaining == 0 || game.correct_guess == true
+  puts "Well, you didn't get it right. Bummer. You have #{game.guesses_remaining} guesses left. Currently guessed letters: #{game.letters_guessed}"
+    next_guess = gets.chomp
+  game.user_guess(next_guess)
   game.test_guess
   game.test_guess_count
   game.rewrite_array
