@@ -1,10 +1,11 @@
 class WordGame
-attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :guessed_words
+attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :guessed_words, :correct_guess
 
   def initialize
     @is_over = false
     @guessed_words = []
     @guesses_remaining = 0
+    @correct_guess = false
   end
 
   def word_to_guess(word)
@@ -25,6 +26,7 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :g
     if
       @user_guess == @word
       @is_over = true
+      @correct_guess = true
     else
       is_over = false
     end
@@ -51,6 +53,7 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :g
 
 end
 
-
-
-
+# ask user 1 for a word.
+# take in their input as the argument for 'word to guess' method.
+# ask user 2 for a guess
+  #
