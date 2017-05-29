@@ -16,17 +16,19 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array
   end
 
   def test_guess
-  @guesses_remaining -= 1
     if
       @user_guess == @word
       @is_over = true
-      puts "YOU GOT IT!!!!"
-    elsif
-      @guesses_remaining == 0
-      is_over = true
-      puts "YOU RAN OUT OF GUESSES"
     else
       is_over = false
+    end
+  end
+
+  def test_guess_count
+  @guesses_remaining -= 1
+    if
+      @guesses_remaining == 0
+      is_over = true
     end
   end
 
@@ -39,3 +41,14 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array
   end
 
 end
+
+
+
+game1 = WordGame.new
+game1.word_to_guess("word")
+game1.user_input("card")
+p game1.test_guess
+game1.test_guess_count
+
+
+
