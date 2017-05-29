@@ -2,7 +2,7 @@ require_relative 'game_code'
 
 describe WordGame do
   let(:wordgame) { WordGame.new }
-describe :word => "word", :guesses_remaining => 1, :user_guess => "word"
+describe :word => "word", :guesses_remaining => 3, :user_guess => "word"
 
   it "takes in the word to guess and defines guess array" do
     expect(wordgame.word_to_guess("yes")).to eq "---"
@@ -20,11 +20,11 @@ describe :word => "word", :guesses_remaining => 1, :user_guess => "word"
 
   # TEST_GUESS_COUNT
   it "checks if guess count has been met" do
-    expect(wordgame.test_guess_count).to eq true
+    expect(wordgame.test_guess_count).to eq false
   end
 
 # REWRITE_ARRAY
-  it "re-writes the guess array with correctly guessed letters" dore
+  it "re-writes the guess array with correctly guessed letters" do
     expect(wordgame.test_guess).to eq true
   end
 
