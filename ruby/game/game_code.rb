@@ -1,5 +1,6 @@
 class WordGame
-attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :guessed_words, :correct_guess
+attr_accessor :word, :user_guess
+attr_reader :guessed_words, :guesses_remaining, :is_over, :guess_array, :correct_guess
 
   def initialize
     @is_over = false
@@ -11,6 +12,7 @@ attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array, :g
   def word_to_guess(word)
     @word = word.split("")
     @guesses_remaining = @word.count
+    p @guesses_remaining
     @guess_array = "-" * @word.count
   end
 
@@ -56,4 +58,17 @@ end
 # ask user 1 for a word.
 # take in their input as the argument for 'word to guess' method.
 # ask user 2 for a guess
-  #
+  # run through USER INPUT, TEST GUESS, TEST GUESS COUNT, and REWRITE ARRAY methods
+  # add message for if guess is correct
+  # add message for if guess is incorrect, to include the guess array and how many guesses they have left.
+  # add message for if they are out of guesses.
+
+puts "Its time for the word guessing game!!"
+game = WordGame.new
+
+puts "Player 1! Please enter your secret word."
+  player_1 = gets.chomp
+  game.word_to_guess(player_1)
+
+puts "Player 2! Its your turn to guess the #{@guesses_remaining} letter word."
+
