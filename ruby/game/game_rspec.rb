@@ -2,7 +2,6 @@ require_relative 'game_code'
 
 describe WordGame do
   let(:wordgame) { WordGame.new }
-describe :word => "word", :guesses_remaining => 3, :user_guess => "word"
 
   it "takes in the word to guess and defines guess array" do
     expect(wordgame.word_to_guess("yes")).to eq "---"
