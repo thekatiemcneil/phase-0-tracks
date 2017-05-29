@@ -1,37 +1,41 @@
 class WordGame
-attr_accessor :is_over, :guesses_remaining, :word, :user_guess
+attr_accessor :is_over, :guesses_remaining, :word, :user_guess, :guess_array
 
   def initialize
     @is_over = false
   end
 
   def word_to_guess(word)
-    @word = word
-    @guesses_remaining = @word.length
+    @word = word.split("")
+    @guesses_remaining = @word.count
+    @guess_array = "-" * @word.count
   end
 
-  def test_guess(user_guess)
-  @user_guess = user_guess
+  def user_input(user_guess)
+    @user_guess = user_guess.split("")
+  end
+
+  def test_guess
   @guesses_remaining -= 1
-    if @user_guess == @word
+    if
+      @user_guess == @word
       @is_over = true
       puts "YOU GOT IT!!!!"
     elsif
       @guesses_remaining == 0
       is_over = true
       puts "YOU RAN OUT OF GUESSES"
-      # elsif
-      #   @user_guess.split(" ")
     else
       is_over = false
     end
   end
 
-end
+  def rewrite_array
+    @word.each_with_index do |i, index|
+      if i == @user_guess[index]
+        @guess_array[index] = i
+      end
+    end
+  end
 
-game1 = WordGame.new
-game1.word_to_guess("yes")
-game1.test_guess("sap")
-game1.test_guess("cop")
-game1.test_guess("yes")
-p game1
+end
