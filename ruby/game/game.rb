@@ -44,5 +44,23 @@ class WordGame
     number_of_guesses -= 1
   end
 
+  def update_letters_array
+    if !@guessed_words_array.include?(@current_guess)
+      @guessed_words_array.push(@current_guess)
+    end
+  end
+
 end
+
+puts "Welcome to the Word Game!"
+game = WordGame.new
+
+puts "Player 1, please type the secret word."
+  secret_word = gets.chomp
+
+game.record_word(secret_word)
+game.set_guess_count
+
+puts "Thanks Player 1! Okay, Player 2. Its your turn. You have #{game.number_of_guesses} guesses to figure out this #{game.word.length} letter word."
+  guess = gets.chomp
 
