@@ -26,17 +26,9 @@ class WordGame
   end
 
   def already_guessed?
-    if
-      !@guessed_words_array.include?(@current_guess)
-        @guessed_words_array.push(@current_guess)
-    else
-      @guessed_words_array.include?(@current_guess)
-        @number_of_guesses += 1
-    end
   end
 
   def update_guess_count
-    @number_of_guesses -= 1
   end
 
 end
