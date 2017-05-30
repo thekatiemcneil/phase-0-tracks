@@ -1,39 +1,30 @@
-require_relative 'game'
+grequire_relative 'game'
 
 describe WordGame do
-  let(:game) { WordGame.new }
+  let(:wordgame) { WordGame.new }
 
-  it "#record_word records user 1's word" do
-    expect(game.record_word("word")).to eq "word"
+  it "takes in the word to guess and defines guess array" do
+    expect(wordgame.word_to_guess("yes")).to eq "---"
   end
 
-  it "#set_guess_count sets the number of guesses allowed" do
-    @word_to_guess = "word"
-    @number_of_guesses = 0
-    expect(game.set_guess_count).to eq 4
+# USER_GUESS
+  it "takes in the user guess and converts it to a character array." do
+    expect(wordgame.user_guess("mop")).to eq ["m", "o", "p"]
   end
 
-  it "#record_guess takes in user 2's guess" do
-    expect(game.record_guess("card")).to eq "card"
+# TEST_GUESS
+  it "determines if word has been guessed" do
+    expect(wordgame.test_guess).to eq true
   end
 
-  it "#check_guess checks guess to see if it is correct" do
-    expect(game.check_guess).to eq true
+  # TEST_GUESS_COUNT
+  it "checks if guess count has been met" do
+    expect(wordgame.test_guess_count).to eq false
   end
 
-  it "#already_guessed? checks to see if word has already been guessed" do
-    current_guess = "word"
-    word_to_guess = "card"
-    expect(game.already_guessed?).to eq false
-  end
-
-  it "#update_guess_count updates guess count" do
-    @number_of_guesses = 1
-    expect(game.update_guess_count).to eq 0
-  end
-
-  it "updates guessed letters string" do
-    expect(game.update_letters_garray).to eq []
+# REWRITE_ARRAY
+  it "re-writes the guess array with correctly guessed letters" do
+    expect(wordgame.test_guess).to eq true
   end
 
 end
