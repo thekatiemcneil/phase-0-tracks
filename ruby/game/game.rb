@@ -1,66 +1,96 @@
 class WordGame
-  attr_reader :number_of_guesses, :guessed_words_array, :is_over, :guessed_letters, :word_to_guess, :current_guess, :correct_guess
+attr_accessor :word, :user_guess
+attr_reader :guessed_words, :guesses_remaining, :is_over, :letters_guessed, :correct_guess
 
   def initialize
-    @word = nil
-    @number_of_guesses = 0
-    @guessed_words_array = []
     @is_over = false
-    @guessed_letters = nil
+    @guessed_words = []
+    @guesses_remaining = 0
     @correct_guess = false
   end
 
-  def record_word(word)
-    @word_to_guess = word
+  def word_to_guess(word)
+    @word = word.split("")
+    @guesses_remaining = @word.count
+    @letters_guessed = "-" * @word.count
   end
 
-  def set_guess_count
-    @number_of_guesses = @word_to_guess.length
+  def user_guess(user_guess)
+    if
+      @guessed_words.include?(user_guess)
+        @guesses_remaining += 1
+    end
+    @guessed_words.push(user_guess)
+    @user_guess = user_guess.split("")
   end
 
-  def record_guess(guess)
-    @current_guess = guess
-  end
-
-  def check_guess
-    if @current_guess == @word_to_guess
-      is_over = true
-      correct_guess = true
+  def test_guess
+    if
+      @user_guess == @word
+      @is_over = true
+      @correct_guess = true
     else
       is_over = false
+    end
+  end
+
+  def test_guess_count
+  @guesses_remaining -= 1
+    if
+      @guesses_remaining <= 0
+      is_over = true
       correct_guess = false
-    end
-  end
-
-  def already_guessed?
-    if @guessed_words_array.include?(@current_guess)
-      @number_of_guesses += 1
     else
-      @guessed_words_array.push(@current_guess)
+      is_over = false
     end
   end
 
-  def update_guess_count
-    number_of_guesses -= 1
-  end
-
-  def update_letters_array
-    if !@guessed_words_array.include?(@current_guess)
-      @guessed_words_array.push(@current_guess)
+  def rewrite_array
+    @word.each_with_index do |i, index|
+      if i == @user_guess[index]
+        @letters_guessed[index] = i
+      end
     end
+    @letters_guessed
   end
 
 end
 
-puts "Welcome to the Word Game!"
+# ask user 1 for a word.
+# take in their input as the argument for 'word to guess' method.
+# ask user 2 for a guess
+  # run through USER INPUT, TEST GUESS, TEST GUESS COUNT, and REWRITE ARRAY methods
+  # add message for if guess is correct
+  # add message for if guess is incorrect, to include the guess array and how many guesses they have left.
+  # add message for if they are out of guesses.
+
+puts "Its time for the word guessing game!!"
 game = WordGame.new
 
-puts "Player 1, please type the secret word."
+puts "Player 1! Please enter your secret word."
   secret_word = gets.chomp
+  game.word_to_guess(secret_word)
 
-game.record_word(secret_word)
-game.set_guess_count
+puts "Okay, Player 2, its your turn! Please enter your first guess. Hint: this word is #{secret_word.length} letters long, and you get #{secret_word.length} guesses."
+  guess_one = gets.chomp
+  game.user_guess(guess_one)
+  game.test_guess
+  game.test_guess_count
+  game.rewrite_array
 
-puts "Thanks Player 1! Okay, Player 2. Its your turn. You have #{game.number_of_guesses} guesses to figure out this #{game.word.length} letter word."
-  guess = gets.chomp
+until game.guesses_remaining == 0 || game.correct_guess == true
+  puts "Well, you didn't get it right. Bummer. You have #{game.guesses_remaining} guesses left. Currently guessed letters: #{game.letters_guessed}"
+    next_guess = gets.chomp
+  game.user_guess(next_guess)
+  game.test_guess
+  game.test_guess_count
+  game.rewrite_array
+end
 
+if
+  game.guesses_remaining == 0
+  puts "You ran out of guesses. Too bad you couldn't figure it out. :("
+else
+  game.is_over == true
+  puts "YOU GOT IT! You are incredible."
+end
