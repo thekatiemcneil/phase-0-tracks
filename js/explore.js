@@ -9,6 +9,7 @@ function reverseStr(string) {
     newstr += string[i];
   return newstr;
 }
-
+if(1 == 1) {
 console.log(reverseStr("hello"))
-console.log(reverseStr("DevBootcamp"))
+} else { console.log(reverseStr("DevBootcamp"))
+}
