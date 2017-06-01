@@ -2,7 +2,7 @@
 
 // Take in an array as the argument
 // Figure out the length of each string.
-// Assign the length as a value for the string.
+// Assign the length as a value for the string. [didn't end up needing to actaully assing the value to the string, but needed to save the value as a variable.]
 // Figure out which of the lengths is biggest
   // if num1 is greater than num2 and greater than num3, num1 is largest
   // if num1 is greater than num2 but smaller than num3, num 3 is largest
