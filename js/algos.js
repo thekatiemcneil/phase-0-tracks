@@ -37,6 +37,21 @@ largestString("wingardium leviosa", "expecto patronum", "lumos")
     // Otherwise, false (print false)
 // end
 
+function objectMatch(object1, object2) {
+  var status = false;
+  for (var i = 0; i in Object.keys(object1); i++) {
+    if (object1 in object2); {
+      console.log("true");
+    } else if !(object1 in object2); {
+      console.log("false");
+    } else; {
+      console.log("false");
+    }
+  }
+}
+
+objectMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+
 
 // RELEASE 2
 
