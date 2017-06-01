@@ -27,13 +27,16 @@ largestString("wingardium leviosa", "expecto patronum", "lumos")
 
 // RELEASE 1
 
-// In algos.js, write a function that takes two objects and checks to see if the objects share at least one key-value pair. (You'll keep adding to this file, so we suggest grouping functions at the top and testing at the bottom of the file.) Here are some sample objects and their expected return values:
 // yourFunction({name: "Steven", age: 54}, {name: "Tamir", age: 54}); #  true
 // yourFunction({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}); #  true
-//These both return true because at least one key-value pair matches between the two objects.
-// If no pairs match (and keep in mind that the two objects may not even have any of the same keys), the function should return false. To make your life easier, don't worry about whether a property is a string ('age') or an identifier name (age). Those can be considered equivalent.
-// Again, try to reason through the problem using the basics you've already learned, rather than looking up slick search functions that will do the job for you. We'd rather see you write code that you actually understand!
-// Add some driver code that tests both outcomes of your function.
+
+// Define function that takes in two hashes as an argument.
+// Iterate through each item in the first hash
+  // Compare to the second hash and see if anything matches.
+    // If matches, true (print true)
+    // Otherwise, false (print false)
+// end
+
 
 // RELEASE 2
 
