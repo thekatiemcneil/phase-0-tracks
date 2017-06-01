@@ -9,6 +9,18 @@
   // if num1 is smaller than both, then compare num2 and num3. Whichever is bigger will be the biggest string
 // Print the string for the longest length.
 
-function lrgStr([x, y, z]) {
-g
+function largestString(str1, str2, str3) {
+  var x = str1.length;
+  var y = str2.length;
+  var z = str3.length;
+    if (x>y && x>z) {
+      console.log(str1);
+    } else if (x>y && x<z) {
+      console.log(str3);
+    }  else if (x<y && x<z && y>z) {
+      console.log(str2);
+    }
 }
+
+largestString("word", "hieroglyphics", "washington")
+largestString("wingardium leviosa", "expecto patronum", "lumos")
