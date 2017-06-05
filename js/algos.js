@@ -78,14 +78,14 @@ function randomString() {
   var randChar = "abcdefghijklmnopqrstuvwxyz";
   var charLength = randNum[Math.floor(Math.random() * randNum.length)];
   var string = "";
-  while(string.length < charLength) {
-    string += randChar.charAt(Math.floor(Math.random() * randChar.length))
-  }
-  console.log(string);
+  while (string.length < charLength)
+    string += randChar.charAt(Math.floor(Math.random() * randChar.length));
+  return string
 }
 
-console.log(randomString)
+console.log(randomString())
 
+g
 // function randomStrings(int) {
 //   var randNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //   var randChar = "abcdefghijklmnopqrstuvwxyz".split("");
