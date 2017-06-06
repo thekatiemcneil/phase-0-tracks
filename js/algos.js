@@ -1,50 +1,50 @@
-// // RELEASE 0
+// RELEASE 0
 
-// // Take in an array as the argument
-// // Figure out the length of each string.
-// // Assign the length as a value for the string. [didn't end up needing to actaully assing the value to the string, but needed to save the value as a variable.]
-// // Figure out which of the lengths is biggest
-//   // if num1 is greater than num2 and greater than num3, num1 is largest
-//   // if num1 is greater than num2 but smaller than num3, num 3 is largest
-//   // if num1 is smaller than both, then compare num2 and num3. Whichever is bigger will be the biggest string
-// // Print the string for the longest length.
+// Take in an array as the argument
+// Figure out the length of each string.
+// Assign the length as a value for the string. [didn't end up needing to actaully assing the value to the string, but needed to save the value as a variable.]
+// Figure out which of the lengths is biggest
+  // if num1 is greater than num2 and greater than num3, num1 is largest
+  // if num1 is greater than num2 but smaller than num3, num 3 is largest
+  // if num1 is smaller than both, then compare num2 and num3. Whichever is bigger will be the biggest string
+// Print the string for the longest length.
 
-// function largestString(str1, str2, str3) {
-//   var x = str1.length;
-//   var y = str2.length;
-//   var z = str3.length;
-//     if (x>y && x>z) {
-//       console.log(str1);
-//     } else if (x>y && x<z) {
-//       console.log(str3);
-//     }  else if (x<y && x<z && y>z) {
-//       console.log(str2);
-//     }
-// }
+function largestString([str1, str2, str3]) {
+  var x = str1.length;
+  var y = str2.length;
+  var z = str3.length;
+    if (x>y && x>z) {
+      console.log(str1);
+    } else if (x>y && x<z) {
+      console.log(str3);
+    }  else if (x<y && x<z && y>z) {
+      console.log(str2);
+    }
+}
 
-// largestString("word", "hieroglyphics", "washington")
-// largestString("wingardium leviosa", "expecto patronum", "lumos")
+// largestString(["word", "hieroglyphics", "washington"])
+// largestString(["wingardium leviosa", "expecto patronum", "lumos"])
 
-// // RELEASE 1
+// RELEASE 1
 
-// // yourFunction({name: "Steven", age: 54}, {name: "Tamir", age: 54}); #  true
-// // yourFunction({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}); #  true
+// yourFunction({name: "Steven", age: 54}, {name: "Tamir", age: 54}); #  true
+// yourFunction({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}); #  true
 
-// // Define function that takes in two hashes as an argument.
-// // Iterate through each item in the first hash
-//   // Compare to the second hash and see if anything matches.
-//     // If matches, true (print true)
-//     // Otherwise, false (print false)
-// // end
+// Define function that takes in two hashes as an argument.
+// Iterate through each item in the first hash
+  // Compare to the second hash and see if anything matches.
+    // If matches, true (print true)
+    // Otherwise, false (print false)
+// end
 
-// function objectMatch(object1, object2) {
-//   for (var key in object1); {
-//     if (object1[key] == object2[key]) {
-//       return console.log("true") }
-//     else {
-//       return console.log("false") }
-//   }
-// }
+function objectMatch(object1, object2) {
+  for (var key in object1); {
+    if (object1[key] == object2[key]) {
+      return console.log("true") }
+    else {
+      return console.log("false") }
+  }
+}
 
 // objectMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 // objectMatch({name: "Steven", age: 20}, {name: "Tamir", age: 54});
@@ -91,15 +91,8 @@ function randomArray(int) {
   return array
 }
 
-console.log(randomArray(7))
-
-// function randomStrings(int) {
-//   var randNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-//   var randChar = "abcdefghijklmnopqrstuvwxyz".split("");
-//   var randomArray = [];
-//   for (int; int = 0; int--) {
-
-//   }
-//   console.log(randomArray)
-// }
-// console.log(randomStrings(3))
+for (i = 0; i < 10; i++) {
+  var newArray = randomArray(3);
+  console.log(newArray);
+  console.log(largestString(newArray));
+}
