@@ -80,12 +80,19 @@ function randomString() {
   var string = "";
   while (string.length < charLength)
     string += randChar.charAt(Math.floor(Math.random() * randChar.length));
-  return string
+  return string;
 }
 
-console.log(randomString())
+function randomArray(int) {
+  var array = [];
+  while (int > array.length) {
+    array.push(randomString());
+  }
+  return array
+}
 
-g
+console.log(randomArray(7))
+
 // function randomStrings(int) {
 //   var randNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //   var randChar = "abcdefghijklmnopqrstuvwxyz".split("");
