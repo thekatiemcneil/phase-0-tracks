@@ -1,0 +1,72 @@
+RELEASE 2:
+
+sqlite> SELECT * FROM students, houses WHERE students.house_id = houses.id;
+1|Harry Potter|1|5|true|1|Gryffindor
+2|Ron Weasley|1|5|true|1|Gryffindor
+3|Hermione Granger|1|5|false|1|Gryffindor
+4|Luna Lovegood|3|4|false|3|Ravenclaw
+5|Neville Longbottom|1|5|false|1|Gryffindor
+6|Draco Malfoy|4|5|true|4|Slytherin
+7|Cho Chang|3|6|true|3|Ravenclaw
+8|Hannah Abbot|2|5|false|2|Hufflepuff
+9|Terry Boot|3|5|false|3|Ravenclaw
+10|Lavender Brown|1|5|false|1|Gryffindor
+11|Lee Jordan|1|6|false|1|Gryffindor
+12|Pansy Parkinson|4|5|false|4|Slytherin
+
+sqlite> UPDATE students SET year=6 WHERE year=5;
+sqlite> SELECT * FROM students WHERE year=6;
+1|Harry Potter|1|6|true
+2|Ron Weasley|1|6|true
+3|Hermione Granger|1|6|false
+5|Neville Longbottom|1|6|false
+6|Draco Malfoy|4|6|true
+7|Cho Chang|3|6|true
+8|Hannah Abbot|2|6|false
+9|Terry Boot|3|6|false
+10|Lavender Brown|1|6|false
+11|Lee Jordan|1|6|false
+12|Pansy Parkinson|4|6|false
+
+sqlite> SELECT * FROM students, houses WHERE house_id = houses.id;
+1|Harry Potter|1|6|true|1|Gryffindor
+2|Ron Weasley|1|6|true|1|Gryffindor
+3|Hermione Granger|1|6|false|1|Gryffindor
+4|Luna Lovegood|3|4|false|3|Ravenclaw
+5|Neville Longbottom|1|6|false|1|Gryffindor
+6|Draco Malfoy|4|6|true|4|Slytherin
+7|Cho Chang|3|6|true|3|Ravenclaw
+8|Hannah Abbot|2|6|false|2|Hufflepuff
+9|Terry Boot|3|6|false|3|Ravenclaw
+10|Lavender Brown|1|6|false|1|Gryffindor
+11|Lee Jordan|1|6|false|1|Gryffindor
+12|Pansy Parkinson|4|6|false|4|Slytherin
+
+sqlite> SELECT students.name, students.quidditch, houses.name FROM students JOIN houses ON students.house_id = houses.id;
+Harry Potter|true|Gryffindor
+Ron Weasley|true|Gryffindor
+Hermione Granger|false|Gryffindor
+Luna Lovegood|false|Ravenclaw
+Neville Longbottom|false|Gryffindor
+Draco Malfoy|true|Slytherin
+Cho Chang|true|Ravenclaw
+Hannah Abbot|false|Hufflepuff
+Terry Boot|false|Ravenclaw
+Lavender Brown|false|Gryffindor
+Lee Jordan|false|Gryffindor
+Pansy Parkinson|false|Slytherin
+
+sqlite> DELETE FROM students WHERE name = "Draco Malfoy";
+sqlite> SELECT * FROM students
+   ...> ;
+1|Harry Potter|1|6|true
+2|Ron Weasley|1|6|true
+3|Hermione Granger|1|6|false
+4|Luna Lovegood|3|4|false
+5|Neville Longbottom|1|6|false
+7|Cho Chang|3|6|true
+8|Hannah Abbot|2|6|false
+9|Terry Boot|3|6|false
+10|Lavender Brown|1|6|false
+11|Lee Jordan|1|6|false
+12|Pansy Parkinson|4|6|false
