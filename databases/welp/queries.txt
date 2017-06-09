@@ -1,0 +1,6 @@
+sqlite> SELECT * FROM users, businesses, reviews WHERE user_id = users.id AND business_id = businesses.id;
+2|Mandy|Kaling|1|Grundy Hollow Wedding Chapel|1|4|Good|1|2
+3|Angela|Jolie|4|Lotus Yoga|2|2|terrible|4|3
+1|Bradford|Pitt|2|Amir's Towing|3|3|average|2|1
+1|Bradford|Pitt|4|Lotus Yoga|4|5|amazing!|4|1
+
