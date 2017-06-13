@@ -5,4 +5,4 @@ What is the difference between a GET request and a POST request? When might each
 A GET request requests data from a specified source. This might be used to request an HTML sheet or stylesheet for a website. A POST reuqest submits data for processing for a specific source. This could be used when submitting a form, like registering for a website.
 
 Optional bonus question: What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
-g
+Cookies are files stored on a users computer. They contain website-specific information about a user that is used to customize the website to that user. The cookie contains key data pairs, like firstname, Katie; lastname, McNeil. The cookie can be read and retrieved by the web server to use the information on the website. These are transmitted during the HTTP requests.
