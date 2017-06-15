@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perspective Students</title>
+</head>
+<body>
+  <h1>Perspective Students</h1>
+  <p>Here are all of the people looking for more info about joining the program, and we'll pretend that posting their names and email addresses isn't a huge security/privacy concern.</p>
+  <ul>
+    <% @students.each do |student| %>
+      <li><%= student['name'] %>, <%= student['email'] %>, <%= student['campus']%></li>
+    <% end %>
+  </ul>
+</body>
+</html>
