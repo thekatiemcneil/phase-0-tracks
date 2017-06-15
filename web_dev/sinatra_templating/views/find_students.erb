@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Students At Your Campus</title>
+</head>
+<body>
+  <h1>Find Students At Your Campus</h1>
+  <p>Interested in finding out what other students will be at your campus? Look no further!</p>
+  <ul>
+    <% @students.each do |student| %>
+      <li><%= student['name'] %>, <%= student['age'] %></li>
+    <% end %>
+  </ul>
+</body>
+</html>
