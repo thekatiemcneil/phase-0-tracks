@@ -24,13 +24,23 @@
     </style>
 </head>
 <body>
-    <a href="http://thekatiemcneil.com">www.thekatiemcneil.com</a>
-    <script src="jquery.js"></script>
+    <p> See also: <a href="http://thekatiemcneil.com">www.thekatiemcneil.com</a></p>
+<h1> Katie McNeil </h1>
+<img src=katie_and_cat_in_space.jpeg>
+<p>Hey there.</br>
+</br>
+My name is Katie McNeil. I'm 25 years old, and I live in Austin, Texas. Before that, I spent a year and a half living in Antigua, Guatemala.</br>
+</br>
+I'm an ENFP, with a high P and a low N. I love music, delicious food, Keira Knightly movies, and craft beer. I hate seafood, bad grammar, and spiders. I hail from the Pacific Northwest, and think it is one of the most beautiful places on earth. My passions are traveling the world, playing musical instruments at a mediocre level, and learning as much as I can.</br>
+</br>
+Its nice to meet you.</p>
+</body>
+<script src="jquery.js"></script>
     <script>
 
       $( document ).ready(function() {
           $( "a" ).click(function( event ) {
-              alert( "The link will no longer take you to thekatiemcneil.com" );
+              alert( "Why would you ever want to leave this website? We won't let you. Goodbye, link!" );
               event.preventDefault();
           });
           $( "a" ).addClass( "test" );
@@ -44,15 +54,9 @@
 
       });
 
+      $( "img" ).dblclick(function() {
+          $( "img" ).fadeOut( "slow" );
+      });
+
     </script>
-<h1> Katie McNeil </h1>
-<img src=katie_and_cat_in_space.jpeg>
-<p>Hey there.</br>
-</br>
-My name is Katie McNeil. I'm 25 years old, and I live in Austin, Texas. Before that, I spent a year and a half living in Antigua, Guatemala.</br>
-</br>
-I'm an ENFP, with a high P and a low N. I love music, delicious food, Keira Knightly movies, and craft beer. I hate seafood, bad grammar, and spiders. I hail from the Pacific Northwest, and think it is one of the most beautiful places on earth. My passions are traveling the world, playing musical instruments at a mediocre level, and learning as much as I can.</br>
-</br>
-Its nice to meet you.</p>
-</body>
 </html>
